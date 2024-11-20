@@ -48,6 +48,10 @@ export default async function HomePage() {
             <a 
               href="mailto:msouch3@gmail.com"
               className="text-green-600 hover:text-green-900"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = "mailto:msouch3@gmail.com";
+              }}
             >
               Email
             </a>
