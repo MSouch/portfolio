@@ -1,0 +1,81 @@
+/* Loader Styles */
+
+.loader {
+  position: relative;
+  width: 1em; /* Reduced from 2em to 1em */
+  height: 1em;
+  /* Center the loader */
+  display: inline-block;
+}
+
+.hill {
+  position: relative; /* Changed from absolute to relative */
+  width: 3.55em; /* Reduced from 7.1em */
+  height: 3.55em;
+  top: 0;   /* Reset top */
+  left: 0;  /* Reset left */
+  background-color: transparent;
+  border-left: 0.125em solid whitesmoke; /* Reduced from 0.25em */
+  transform: rotate(45deg);
+}
+
+.hill::after {
+  content: '';
+  position: absolute;
+  width: 3.55em; /* Reduced from 7.1em */
+  height: 3.55em;
+  left: 0;
+  top: 0;
+  background-color: inherit;
+}
+
+.box {
+  position: absolute;
+  left: -0.25em; /* Move box to touch the hill's edge */
+  bottom: 0;     /* Align with bottom */
+  width: 0.5em;
+  height: 0.5em;
+  background-color: transparent;
+  border: 0.125em solid whitesmoke;
+  border-radius: 15%;
+  transform: translate(0, 0) rotate(-45deg);
+  animation: push 5s cubic-bezier(0.79, 0, 0.47, 0.97) infinite; /* Changed from 2.5s to 5s */
+}
+
+@keyframes push {
+  0% {
+    transform: translate(0, 0) rotate(-45deg);
+  }
+  5% {
+    transform: translate(0, 0) rotate(-50deg);
+  }
+  20% {
+    transform: translate(0.25em, -0.25em) rotate(47deg);
+  }
+  25% {
+    transform: translate(0.25em, -0.25em) rotate(45deg);
+  }
+  30% {
+    transform: translate(0.25em, -0.25em) rotate(40deg);
+  }
+  45% {
+    transform: translate(0.5em, -0.5em) rotate(137deg);
+  }
+  50% {
+    transform: translate(0.5em, -0.5em) rotate(135deg);
+  }
+  55% {
+    transform: translate(0.5em, -0.5em) rotate(130deg);
+  }
+  70% {
+    transform: translate(0.75em, -0.75em) rotate(217deg);
+  }
+  75% {
+    transform: translate(0.75em, -0.75em) rotate(220deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-225deg);
+  }
+}
+
+/* Removed empty rulesets */
