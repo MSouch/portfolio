@@ -12,8 +12,7 @@ export interface GitHubRepo {
 export async function fetchGitHubProjects(username: string) {
   try {
     const octokit = new Octokit({
-      // Optional: Add personal access token for higher rate limits
-      // auth: process.env.GITHUB_TOKEN 
+      auth: process.env.GITHUB_TOKEN
     });
 
     const { data } = await octokit.repos.listForUser({ 

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import TextGradient from '@/components/TextGradient';
 
 export default async function HomePage() {
-  const projects = await fetchGitHubProjects('msouch');
+  const projects = await fetchGitHubProjects('Msouch');
 
   return (
     <div className="container mx-auto px-4 py-8">
