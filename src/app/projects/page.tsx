@@ -27,7 +27,7 @@ export default async function HomePage() {
 
         {/* Right-aligned Connect Section */}
         <div className="text-center md:text-right">
-          <h2 className="text-3xl font-semibold mb-6">Let's Connect</h2>
+          <h2 className="text-3xl font-semibold mb-6">Let&apos;s Connect</h2>
           <div className="flex justify-center md:justify-end gap-4">
             <a 
               href="https://www.linkedin.com/in/maxwell-souchereau/" 
