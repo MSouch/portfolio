@@ -19,7 +19,7 @@ export default async function HomePage() {
               <TextGradient text="Hello, I&apos;m Maxwell Souchereau" />
             </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-4">
+          <p className="text-xl text-white mb-4">
             A developer passionate about creating innovative solutions 
             and continuously learning new technologies.
           </p>
@@ -33,7 +33,7 @@ export default async function HomePage() {
               href="https://www.linkedin.com/in/maxwell-souchereau/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800"
+              className="text-blue-600 hover:text-blue-900"
             >
               LinkedIn
             </a>
@@ -41,13 +41,13 @@ export default async function HomePage() {
               href="https://github.com/msouch" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-800"
+              className="text-purple-600 hover:text-purple-900"
             >
               GitHub
             </a>
             <a 
               href="mailto:your.email@example.com"
-              className="text-green-600 hover:text-green-800"
+              className="text-green-600 hover:text-green-900"
             >
               Email
             </a>
