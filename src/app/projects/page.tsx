@@ -1,4 +1,4 @@
-import { fetchGitHubProjects, GitHubRepo } from '@/utils/github';
+import { fetchGitHubProjects } from '@/utils/github';
 import Link from 'next/link';
 import TextGradient from '@/components/TextGradient';
 
@@ -16,7 +16,7 @@ export default async function HomePage() {
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4 whitespace-nowrap">
             <span className="text-4xl font-bold">
-              <TextGradient text="Hello, I'm Maxwell Souchereau" />
+              <TextGradient text="Hello, I&apos;m Maxwell Souchereau" />
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-4">
@@ -71,14 +71,10 @@ export default async function HomePage() {
           {projects.slice(0, 8).map((project) => (
             <div 
               key={project.id} 
-              className="border rounded-lg p-4 shadow-md hover:shadow-xl transition-shadow"
+              className="border rounded-lg p-4 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
-              <p className="text-gray-600 mb-4">
-                {(project.description ?? '').length > 100 
-                  ? `${project.description?.slice(0, 100)}...` 
-                  : project.description}
-              </p>
+              <p className="text-gray-600 mb-4">{project.description}</p>
               <div className="flex justify-between items-center">
                 <span className="text-sm text-gray-500">
                   {project.language}
