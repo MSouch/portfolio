@@ -46,7 +46,7 @@ export default async function HomePage() {
               GitHub
             </a>
             <a 
-              href="mailto:your.email@example.com"
+              href="mailto:msouch3@gmail.com"
               className="text-green-600 hover:text-green-900"
             >
               Email
