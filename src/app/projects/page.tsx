@@ -115,34 +115,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="text-center">
-        <h2 className="text-3xl font-semibold mb-6">Let's Connect</h2>
-        <div className="flex justify-center space-x-4">
-          <a 
-            href="https://linkedin.com/in/yourprofile" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-800"
-          >
-            LinkedIn
-          </a>
-          <a 
-            href="https://github.com/msouch" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-800"
-          >
-            GitHub
-          </a>
-          <a 
-            href="mailto:your.email@example.com"
-            className="text-green-600 hover:text-green-800"
-          >
-            Email
-          </a>
-        </div>
-      </section>
     </div>
   );
 }
