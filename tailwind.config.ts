@@ -12,6 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontSize: {
+        '12xl': ['12rem', { lineHeight: '1' }], // This is much larger than the current size
+      },
       keyframes: {
         animatedgradient: {
           '0%': { backgroundPosition: '0% 50%' },
