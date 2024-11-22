@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Loader Styles */
+
 @import '../styles/loader.css';
-@import '../styles/button.css';
+@import '../styles/floating.css';
+
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+  }

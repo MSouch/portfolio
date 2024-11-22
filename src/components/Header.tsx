@@ -30,14 +30,6 @@ export default function Header() {
                 Projects
               </Link>
             </li>
-            <li>
-              <Link 
-                href="/contact" 
-                className="bg-neutral-950 text-neutral-400 border border-neutral-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group"
-              >
-                Contact
-              </Link>
-            </li>
           </ul>
         </div>
       </nav>
