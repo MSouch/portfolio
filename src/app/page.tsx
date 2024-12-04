@@ -42,7 +42,7 @@ export default function HomePage() {
         </div>
 
         <a 
-          href="/resume.pdf" 
+          href="https://docs.google.com/document/d/1zjF_iB1xACC3VaLuSReaWCgmrRhmTzR4XM4UDdNQl4I/edit?usp=sharing" 
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center transition-colors"
