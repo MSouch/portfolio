@@ -52,6 +52,8 @@ export default function HomePage() {
           </a>
           <a 
             href="mailto:msouch3@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-6xl text-green-600 hover:text-green-900 transition-all duration-300 hover:scale-110"
           >
             <HiOutlineMail />
