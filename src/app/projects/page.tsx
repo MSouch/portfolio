@@ -7,7 +7,7 @@ export default async function ProjectsPage() {
     <div className="container mx-auto px-4 py-8">
       {/* Projects Page */}
       <section className="mb-12">
-        <h2 className="text-3xl font-semibold mb-6 text-center">Projects</h2>
+        <h2 className="text-3xl font-semibold mb-6 text-center">Github Projects</h2>
         <div className="grid md:grid-cols-4 gap-6">
           {projects.slice(0, 8).map((project) => (
             <div 
