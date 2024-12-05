@@ -1,14 +1,30 @@
-import { fetchGitHubProjects } from '@/utils/github';
-import Link from 'next/link';
+'use client';
+import { useEffect, useState } from 'react';
 import TextGradient from '@/components/TextGradient';
 import { FaLinkedin } from 'react-icons/fa';
 import { AiFillGithub } from 'react-icons/ai';
 import { HiOutlineMail, HiDocumentText } from 'react-icons/hi';
 
 export default function HomePage() {
+  const [location, setLocation] = useState<{ city?: string; country?: string }>();
+
+  useEffect(() => {
+    async function getLocation() {
+      try {
+        const res = await fetch('/api/location');
+        const data = await res.json();
+        setLocation(data);
+      } catch (error) {
+        console.error('Failed to fetch location:', error);
+      }
+    }
+    getLocation();
+  }, []);
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <section className="mb-12 flex flex-col items-center justify-center min-h-[60vh]">
+    <div className="container mx-auto px-4 py-8 min-h-screen flex flex-col">
+      {/* Main content section */}
+      <section className="mb-12 flex flex-col items-center justify-center flex-grow">
         <h1 className="text-8xl font-bold mb-6 text-center">
           <TextGradient text="Hey, I'm Maxwell." />
         </h1>
@@ -16,6 +32,7 @@ export default function HomePage() {
           A software developer who loves to build cool apps, websites, and play with new technologies.
         </p>
         
+        {/* Social links */}
         <div className="flex justify-center gap-4 mb-8">
           <a 
             href="https://www.linkedin.com/in/maxwell-souchereau/" 
@@ -50,6 +67,14 @@ export default function HomePage() {
           <HiDocumentText className="text-6xl text-red-600 hover:text-red-800 transition-all duration-300 hover:scale-110" />
           <span className="text-xl text-white">Resume</span>
         </a>
+      </section>
+      
+      <section className="flex justify-center mb-20">
+        {location && (
+          <p className="text-lg text-gray-400 text-center">
+            Viewing from {location.city}, {location.country}
+          </p>
+        )}
       </section>
     </div>
   );
