@@ -23,7 +23,6 @@ export default function HomePage() {
 
   return (
     <div className="container mx-auto px-4 py-8 min-h-screen flex flex-col">
-      {/* Main content section */}
       <section className="mb-12 flex flex-col items-center justify-center flex-grow">
         <h1 className="text-8xl font-bold mb-6 text-center">
           <TextGradient text="Hey, I'm Maxwell." />
@@ -32,7 +31,6 @@ export default function HomePage() {
           A software developer who loves to build cool apps, websites, and play with new technologies.
         </p>
         
-        {/* Social links */}
         <div className="flex justify-center gap-4 mb-8">
           <a 
             href="https://www.linkedin.com/in/maxwell-souchereau/" 
@@ -71,13 +69,13 @@ export default function HomePage() {
         </a>
       </section>
       
-      <section className="flex justify-center mb-20">
-        {location && (
-          <p className="text-lg text-gray-400 text-center">
+      {location && (
+        <section className="flex justify-center mb-20">
+          <p className="text-lg text-gray-400 text-center mt-[-20px]">
             Viewing from {location.city}, {location.country}
           </p>
-        )}
-      </section>
+        </section>
+      )}
     </div>
   );
 }

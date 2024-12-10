@@ -1,6 +1,6 @@
 .button-89 {
-  --b: 3px;   /* border thickness */
-  --s: .45em; /* size of the corner */
+  --b: 3px;  /* Border size */
+  --s: .45em; /* Padding size */
   --color: #ffffff; /* White color for dark background */
   
   padding: calc(.5em + var(--s)) calc(.9em + var(--s));

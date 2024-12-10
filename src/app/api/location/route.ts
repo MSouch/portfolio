@@ -8,11 +8,11 @@ export async function GET(request: Request) {
       throw new Error('IPSTACK_API_KEY is not defined');
     }
 
-    // Extract the client's IP address from the request headers
+    // Extract IP address from the request headers
     const ip =
       request.headers.get('x-forwarded-for')?.split(',')[0] ||
       request.headers.get('x-real-ip') ||
-      '0.0.0.0'; // Fallback IP address
+      '0.0.0.0'; // Fallback IP 
 
     const response = await fetch(
       `http://api.ipstack.com/${ip}?access_key=${apiKey}&fields=city,country_name`
