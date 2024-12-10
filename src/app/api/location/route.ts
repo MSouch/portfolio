@@ -2,9 +2,9 @@ import { NextResponse } from 'next/server';
 
 export async function GET(request: Request) {
   try {
-    // ipstack API with HTTPS and fields parameter
+    // Use HTTP endpoint and add HTTPS parameter
     const response = await fetch(
-      `https://api.ipstack.com/check?access_key=de16ce1c4c79a4907ce57f90a94f1ad9&fields=city,country_name`
+      `http://api.ipstack.com/check?access_key=de16ce1c4c79a4907ce57f90a94f1ad9&fields=city,country_name&security=1&hostname=1`
     );
     
     if (!response.ok) {
