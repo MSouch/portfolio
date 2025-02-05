@@ -9,13 +9,14 @@ export async function GET(request: Request) {
     }
 
     // Extract IP address from the request headers
-    const ip =
+    const ipFromHeader =
       request.headers.get('x-forwarded-for')?.split(',')[0] ||
       request.headers.get('x-real-ip') ||
       '0.0.0.0'; // Fallback IP 
+    const queryIp = ipFromHeader === '0.0.0.0' ? 'check' : ipFromHeader;
 
     const response = await fetch(
-      `http://api.ipstack.com/${ip}?access_key=${apiKey}&fields=city,country_name`
+      `http://api.ipstack.com/${queryIp}?access_key=${apiKey}&fields=city,country_name`
     );
 
     if (!response.ok) {
