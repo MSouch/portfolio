@@ -2,22 +2,20 @@ import { NextResponse } from 'next/server';
 
 export async function GET(request: Request) {
   try {
-    const apiKey = process.env.IPSTACK_API_KEY;
-
-    if (!apiKey) {
-      throw new Error('IPSTACK_API_KEY is not defined');
-    }
-
     // Extract IP address from the request headers
     const ipFromHeader =
       request.headers.get('x-forwarded-for')?.split(',')[0] ||
       request.headers.get('x-real-ip') ||
-      '0.0.0.0'; // Fallback IP 
-    const queryIp = ipFromHeader === '0.0.0.0' ? 'check' : ipFromHeader;
+      '0.0.0.0';
 
-    const response = await fetch(
-      `http://api.ipstack.com/${queryIp}?access_key=${apiKey}&fields=city,country_name`
-    );
+    // If the extracted IP is invalid (fallback), don't append it to the base URL.
+    const queryIp = ipFromHeader !== '0.0.0.0' ? ipFromHeader.trim() : '';
+
+    const apiUrl = queryIp
+      ? `https://freeipapi.com/api/json/${queryIp}`
+      : `https://freeipapi.com/api/json/`;
+
+    const response = await fetch(apiUrl);
 
     if (!response.ok) {
       throw new Error('Failed to fetch location data');
@@ -25,13 +23,14 @@ export async function GET(request: Request) {
 
     const data = await response.json();
 
-    if (!data.city || !data.country_name) {
+    // Validate that the response contains the required fields
+    if (!data.cityName || !data.countryName) {
       throw new Error('Invalid location data received');
     }
 
     return NextResponse.json({
-      city: data.city,
-      country: data.country_name,
+      city: data.cityName,
+      country: data.countryName,
     });
   } catch (error: any) {
     console.error('Location API error:', error);
